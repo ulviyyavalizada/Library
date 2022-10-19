@@ -1,0 +1,117 @@
+main.manuscript
+    .manuscript_section
+        max-width: 655px
+        margin: 0 auto
+        padding-top: 46px
+        padding-bottom: 287px
+        .authorRool
+            margin-left: auto
+            display: flex
+            justify-content: end
+            width: max-content
+            .see_more
+                font-size:  14px
+                line-height: 16px
+                &::after
+                    bottom: -4px
+                
+        .manuscript_form
+            margin-top: 18px
+            .form_group
+                margin-bottom: 25px
+                position: relative
+                .remove_val
+                    opacity: 0
+                    transition: opacity .15s
+                    pointer-events: none
+                    position: absolute
+                    right: 20px
+                    top: 54%
+                    &.active
+                        opacity: 1
+                        pointer-events: unset
+            .form-label
+                font-size: 14px
+                line-height: 16px
+                margin-bottom: 10px
+                color: $black
+            input
+                color: $black
+                font-size: 12px
+                line-height: 14px
+                border: 1px solid $borderColor_2
+                transition: border-color .2s
+                border-radius: 5px
+                padding: 16px 20px
+                padding-right: 50px
+                &.error
+                    border-color: $errorBorder
+                &::placeholder
+                    color: $textColor_1
+                    font-size: 12px
+                    line-height: 14px
+                &:focus
+                    border-color: $black
+                    box-shadow: none
+            .file_area
+                border: 1px dashed $borderColor_2
+                border-radius: 5px
+                height: 133px
+                border-image-source:url("../img/border.png")
+                border-image-width: 1
+                border-image-slice: 1
+                +flex_center
+                .file_label
+                    width: 100%
+                    display: none
+                    justify-content: center
+                    align-items: center
+                    height: 100%
+                    flex-direction: column
+                    &.show
+                        display: flex
+                    img
+                        width: 30px
+                    ._text
+                        display: block
+                        color: $textColor_4
+                        +r-m
+                        font-size: 12px
+                        line-height: 14px
+                        margin-top: 6px
+                        text-decoration: underline
+
+                .downloaded_file
+                    display: none
+                    width: 100%
+                    margin: 19px
+                    justify-content: space-between
+                    gap: 30px
+                    background-color: $brown_3
+                    border-radius: 5px
+                    padding: 16px 18px
+                    &.show
+                        display: flex
+                    .remove_file
+                        position: static
+                        color: #EA1A1A
+                        +r-m
+                        padding: 0 10px
+                        margin: 0 -10px
+                        font-size: 12px
+                        line-height: 14px
+                    .file_name
+                        display: block
+                        color: $black
+                        font-size: 12px
+                        line-height: 14px
+                        +ellips_word
+
+
+            .form_btn
+                margin-top: 50px
+                &.disabled
+                    background-color: $brown_2
+                    &:hover
+                        border-color: transparent
+                        color: $white

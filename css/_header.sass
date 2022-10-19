@@ -1,0 +1,138 @@
+header
+    z-index: 999
+    padding-top: 20px
+    .main_container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 44px
+        .hamburger_box
+            display: none
+            cursor: pointer
+            ._icon
+                display: grid
+                gap: 5px
+            span
+                pointer-events: none
+                background-color: $black
+                border-radius: 270px
+                height: 2px
+                display: block
+                transition: all .15s
+                &:nth-child(1)
+                    width: 22px
+                &:nth-child(2)
+                    width: 17px
+                    transition: all .01s
+                &:nth-child(3)
+                    width: 12px
+        .logo_box
+            max-width: 153px
+            width: 100%
+            img
+                width: 73px
+                object-fit: contain
+        .header_navbar
+            transition: none
+            .nav_list
+                display: flex
+                gap: 59px
+                transition: none
+                .nav_list_item
+                    width: max-content
+                    position: relative
+                    line-height: initial
+                    &.min_size_item
+                        display: none
+                    &::after
+                        transition: all .1s
+                        content: ""
+                        opacity: 0
+                        position: absolute
+                        bottom: -7px
+                        left: 50%
+                        transform: translate(-50%, 0%)
+                        width: 6px
+                        min-width: 6px
+                        height: 6px
+                        border-radius: 50%
+                        background-color: $black
+                        
+                    &.active
+                        &::after
+                            opacity: 1
+                        .nav_title
+                            color: $black
+                        &.nav_dropdown
+                            .main_dropdown
+                                .dropdown_arrow
+                                    path
+                                        stroke: $black
+                    &.active_dropdown
+                        &.nav_dropdown
+                            .main_dropdown
+                                .dropdown_arrow
+                                    transform: rotate(-180deg)
+                                    path
+                                        stroke: $black
+                            .dropdown_list
+                                pointer-events: unset
+                                opacity: 1
+                    .nav_title
+                        text-align: center
+                        color: $textColor_1
+                        font-size: 16px
+                        line-height: 19px
+                        +r-m
+                        transition: all .2s 
+                    a
+                        line-height: initial
+                        text-align: center
+                        transition: none
+                        
+                    &.nav_dropdown
+                        position: relative
+                        .main_dropdown
+                            cursor: pointer
+                            display: flex
+                            align-items: center
+                            .dropdown_arrow
+                                margin-left: 5px
+                                margin-top: 2px
+                            
+                        .dropdown_list
+                            pointer-events: none
+                            position: absolute
+                            opacity: 0
+                            transition: all .15s
+                            z-index: 3
+                            top: 100%
+                            padding-top: 5px
+                            width: 100%
+                            min-width: 194px
+                            left: 50%
+                            transform: translate(-50%, 0%)
+                            ul
+                                border: 1px solid rgba(202, 202, 202, 1)
+                                border-radius: 5px
+                                background-color: $white
+                                padding: 10px 0
+                                li
+                                    a
+                                        color: $black
+                                        +r-m
+                                        width: 100%
+                                        text-align: start
+                                        font-size: 16px
+                                        line-height: 19px
+                                        padding: 10px 14px
+                                        &.hover
+                                            color: $black
+                                        &.disable
+                                            color: $textColor_3
+                    
+
+
+
+
+

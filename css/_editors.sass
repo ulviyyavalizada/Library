@@ -1,0 +1,39 @@
+main.editors
+    .editors_section
+        padding-top: 50px
+        padding-bottom: 135px
+        width: 100%
+        .two_column
+            margin-bottom: 80px
+            display: grid
+            grid-template-columns: 1fr 1fr
+            gap: 80px
+            .middle_box
+                display: grid
+                grid-template-columns: 1fr 1fr
+                gap: 30px 100px
+        .one_column
+            margin-bottom: 80px
+            width: 100%
+            .middle_box
+                display: grid
+                grid-template-columns: repeat(4, 1fr)
+                gap: 30px 100px
+        .row_item
+            .top_box
+                margin-bottom: 34px
+            .detail_item
+                ._author
+                    color: $brown_1
+                    font-size: 18px
+                    line-height: 21px
+                    +r-b
+                ._text
+                    margin-top: 8px
+                    color: $black
+                    font-size: 14px
+                    line-height: 16px
+
+    .current_editions 
+        .middle_box
+          padding-bottom: 264px

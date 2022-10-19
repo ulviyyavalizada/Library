@@ -1,0 +1,235 @@
+main
+    &.articles
+        padding-bottom: 175px
+        .linked_articles, .searchable_articles
+            display: none
+            padding-bottom: 10px
+            .not_finded_text
+                margin-top: 20px
+                color: $black
+                display: none
+            .search_top_box
+                display: none
+            .middle_box
+                
+            .article_item
+                cursor: pointer
+                margin: -9px
+                padding: 9px
+                transition: all .1s
+                border: 1px solid transparent
+                border-radius: 5px
+                background-color: transparent
+                &:hover
+                    border-color: $borderColor_2
+                    background-color: white
+                    ._title
+                        color: $brown_1
+                        text-decoration-color: $brown_1
+                ._title
+                    transition: all .1s
+                    +m-b
+                    font-size: 15px
+                    text-decoration: underline transparent
+                    line-height: 19px
+                    color: $black
+                ._descrip
+                    color: $textColor_1
+                    margin-top: 9px
+                    +three_line_ellips
+                    font-size: 15px
+                    line-height: 17.5px
+                ._moreInfo
+                    margin-top: 9px
+                    color: $textColor_3
+                    font-size: 14px
+                    line-height: 16px
+                    display: block
+
+
+        .latest_articles 
+            padding-bottom: 95px
+            .middle_box 
+                padding-top: 51px
+                .swiper-wrapper
+                    display: flex
+                    gap: 0
+                    padding-bottom: 45px
+                .swiper-button-next, .swiper-button-prev
+                    opacity: 1
+                    width: max-content
+                    height: max-content
+                    top: 47px
+                    svg
+                        path
+                            transition: all .2s
+                    &.swiper-button-disabled
+                        svg
+                            path
+                                fill: #9E9B9B
+                    &::after
+                        content: none  
+                .swiper-button-prev
+                    transform: rotate(-180deg)     
+
+                .swiper-pagination
+                    display: none 
+
+        .most_articles 
+            .middle_box
+                padding-bottom: 79px
+                grid-template-columns: 1fr
+
+        section 
+            .top_box 
+                ._title
+                    width: 100%
+
+        .main_body
+            display: flex
+            gap: 44px
+            justify-content: space-between
+            .left_part
+                width: 100%
+                max-width: 285px
+                .hover_darkly
+                    display: none
+                    width: 100%
+                    border: 1px solid $borderColor_2
+                    border-radius: 3px
+                    padding: 14px 30px
+                    font-size: 17px
+                    line-height: 20px
+                aside
+                    .aside_category_btn
+                        +flex_between
+                        width: 100%
+                        padding: 10px 24px
+                        border: 1px solid $borderColor_2
+                        border-radius: 4px
+                        margin-bottom: 10px
+                        &.open_category
+                            transform: rotate(0deg)
+                        img
+                            transform: rotate(-180deg)
+                            transition: transform .15s
+                        ._text
+                            display: block
+                            color: $black
+                            +r-m
+                            font-size: 16px
+                            line-height: 19px
+                    .main_category 
+                        border: 1px solid $borderColor_2
+                        border-radius: 4px
+                        padding: 5px 24px 50px
+                        width: 100% 
+                        opacity: 0
+                        height: 0
+                        pointer-events: none
+                        &.show
+                            height: max-content
+                            opacity: 1
+                            pointer-events: unset
+                        >li 
+                            cursor: pointer
+                                
+                        li
+                            transition: all .2s
+                            border-bottom: 1.5px solid $borderColor_3  
+                        li.open
+                            border-bottom-color: transparent
+                            .category_head
+                                ._icon
+                                    span
+                                        &:nth-child(2)
+                                            transform: rotate(0)
+                            
+                        .category_head
+                            +flex_between
+                            gap: 30px    
+                            padding-top: 25px
+                            padding-bottom: 8px 
+                            ._icon
+                                width: 9px
+                                height: 9px
+                                span
+                                    display: block
+                                    width: 100%
+                                    height: 2px
+                                    background-color: $black
+                                    border-radius: 250px
+                                    transition: all .2s
+                                    &:nth-child(2)
+                                        margin-top: -2px
+                                        transform: rotate(-90deg)
+                                        
+                        span
+                        display: block
+                        ._text
+                            color: $black
+                            display: block
+                            +r-m
+                            font-size: 15px
+                            line-height: 18px
+                                
+                        .submenu
+                            display: none
+                            max-width: 177px
+                            width: 100%
+                            margin-left: 19px
+                            .submenu_inner
+                                ._text
+                                    display: block
+                                    border-bottom: 1.5px solid $borderColor_3  
+                                a
+                                    display: block
+                            ._text
+                                +r-r
+                                padding: 12px 9px 8px
+                                font-size: 14px
+                                line-height: 16px
+                                transition: all .2s
+                                text-decoration: underline transparent
+                                &:hover
+                                    color: $brown_1
+                                    text-decoration-color: $brown_1
+                                    +r-m
+
+                    .mob_cancel_btn
+                        +r-m
+                        display: none
+                        font-size: 14px
+                        line-height: 16px
+                        color: $black
+                        margin: 42px auto
+                        width: 100%
+                        padding: 16px
+                        max-width: 237px
+
+            .right_part
+                width: 74%    
+                .searchable_articles
+                    display: none
+                &.active_search
+                    section
+                        display: none
+                       
+                    .searchable_articles
+                        display: block
+                        .search_top_box
+                            display: flex
+                            
+                &.white_overlay
+                    position: relative
+                    
+                    &::after
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 0
+                        z-index: 11
+                        width: 100%
+                        height: 100%
+                        background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0.6%, rgba(255, 255, 255, 0.7) 52.4%, rgba(255, 255, 255, 0.6) 100%)
+                

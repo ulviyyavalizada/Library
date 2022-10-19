@@ -1,0 +1,84 @@
+footer
+    margin-top: auto
+    border-top: 1px solid $borderColor_1
+    *
+        color: $black
+    .main_container
+        padding-top: 20px
+        padding-bottom: 21px
+        .footer_top
+            padding-bottom: 30px
+            display: flex
+            justify-content: flex-end
+            ul
+                display: flex
+                gap: 20px
+                li
+                    line-height: initial
+                    a
+                        text-transform: uppercase
+                        color: $textColor_2
+                        font-size: 14px
+                        transition: all .3s
+                        line-height: 16px
+                        +r-m
+                        &.active
+                            color: $black
+
+        .footer_middle
+            display: flex
+            gap: 120px
+            .left_box
+                width: 40%
+                ul
+                    li
+                        display: flex
+                        gap: 19px
+                        margin-bottom: 23px
+                        line-height: 16px
+                        span,a
+                            display: block
+                            color: $black
+                            font-size: 14px
+                            line-height: 16px
+                        a
+                            max-width: 238px
+                            width: 100%
+                        span
+                            min-width: 70px
+            .right_box
+                width: 60%
+                ul
+                    display: grid
+                    grid-template-columns: 1fr 1fr
+                    gap: 20px 50px
+                    li
+                        width: 100%
+                        line-height: 16px
+                        a
+                            width: 100%
+                            font-size: 14px
+                            line-height: 16px
+                            color: $black
+                            opacity: 0.6
+                            transition: .2s
+                            &:hover
+                                opacity: 1
+                            
+
+        .footer_bottom
+            display: flex
+            align-items: center
+            justify-content: center
+            padding-top: 67px
+            font-size: 13px
+            line-height: 16px
+            color: $textColor_2
+            span
+                padding-right: 3px
+                color: inherit
+                font-size: 16px
+                line-height: 19px
+                
+                
+        

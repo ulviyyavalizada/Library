@@ -1,0 +1,116 @@
+main
+    &.library
+        .main_body
+            margin-top: 55px
+            margin-bottom: 304px
+            width: 100%
+            position: relative
+            .left_part
+                
+                position: absolute
+                top: 0
+                left: 0
+                background-color: $white
+                
+                aside
+                    // padding-top: 58px
+                    padding-bottom: 58px
+                    width: 175px
+                    position: fixed
+                    ul
+                        height: 32vh
+                        max-height: 100%
+                        overflow-y: auto
+                        li
+                            margin-bottom: 20px
+                            text-align: center
+                            a
+                                color: $textColor_3
+                                +m-b
+                                font-size: 28px
+                                line-height: 35px
+                                &.active
+                                    color: $black
+            .right_part
+                margin-left: 218px
+                .library_section
+                    margin-bottom: 79px
+                    .section_id
+                        display: inline
+                .middle_box
+                    margin-top: 45px
+                    .swiper-wrapper
+                        display: grid
+                        grid-template-columns: repeat(4, 1fr)
+                        gap: 64px
+                        .box_item
+                            height: 302px
+                            display: flex
+                            flex-direction: column
+                            ._img
+                                filter: drop-shadow(17px 17px 15px rgba(0, 0, 0, 0.2))
+                                width: 109px
+                                height: 146px
+                                border-radius: 5px
+                                margin: 0 auto 20px
+                                position: relative
+                                &::after
+                                    content: ''
+                                    position: absolute
+                                    top: 0
+                                    transition: all .3s
+                                    left: 0
+                                    width: 100%
+                                    height: 100%
+                                    border-radius: 5px
+                                    background-color: rgba(0, 0, 0, 0.15)
+                                img
+                                    +img_cover
+                                    border-radius: 5px
+
+                            ._title
+                                +r-m
+                                font-size: 15px
+                                line-height: 18px
+                                color: $black
+                                text-align: center
+                                +two_line_ellips
+                            ._number
+                                +ellips_word
+                                color: $black
+                                font-size: 14px
+                                line-height: 16px
+                                +flex_center
+                                gap: 8px
+                                margin-top: 4px
+                                span
+                                    display: block
+                                dot
+                                    width: 6px
+                                    height: 6px
+                                    border-radius: 50%
+                                    background-color: $black
+
+                            ._author
+                                +ellips_word
+                                margin-top: 8px
+                                margin-bottom: 12px
+                                color: $textColor_3
+                                text-align: center
+                                font-size: 12px
+                                line-height: 14px
+                                span
+                                    display: inline
+                                    margin-left: 4px
+
+                            .main_btn
+                                margin-top: auto
+
+
+
+
+
+
+
+
+

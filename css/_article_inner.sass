@@ -1,0 +1,143 @@
+main.article_inner
+    .main_container
+        position: relative
+    .scroll_on
+        position: absolute
+        bottom: 0
+        right: 0
+        z-index: 9999
+        opacity: 0
+        pointer-events: none
+        transition: .2s
+        display: none
+        &.active
+            opacity: 1
+            pointer-events: unset
+        button
+            position: fixed
+            bottom: 30px
+            right: 16px
+            +flex_center
+            border-radius: 50%
+            border: 1px solid $borderColor_2
+            background-color: $white
+            width: 62px
+            height: 62px
+            padding: 3px
+            img
+                width: 16px
+
+    .article_section
+        .pagination_area
+            margin-top: 0
+            .pagination_content
+                margin-bottom: 0
+        .section_top
+            .mutual_title
+                font-size: 22px
+                line-height: 36px
+            .top_more_details
+                margin-top: 20px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                flex-wrap: wrap
+                gap: 30px
+                .left_box
+                    width: 65%
+                    display: flex
+                    justify-content: space-between
+                    flex-wrap: wrap
+                    gap: 12px 30px
+                    ._authors
+                        color: $textColor_1
+                        font-size: 13px
+                        line-height: 15px
+                    .article_category
+                        display: flex
+                        align-items: center
+                        gap: 6px
+                        flex-wrap: wrap
+                        .category_name
+                            color: $black
+                            text-transform: uppercase
+                            font-size: 13px
+                            line-height: 15px
+                        span
+                            position: relative
+                            display: block
+                            color: $textColor_1
+                            padding-left: 10px
+                            font-size: 13px
+                            line-height: 15px
+                            &::after
+                                position: absolute
+                                content: ''
+                                left: 0
+                                min-width: 4px
+                                height: 4px
+                                background-color: $textColor_1
+                                border-radius: 50%
+                                top: 35%
+                .right_box
+                    width: 25%
+                    .download_link
+                        display: block
+                        text-decoration: underline
+                        font-size: 15px
+                        line-height: 18px
+                        +r-m
+                        color: $textColor_4
+                        transition: .2s
+                        &:hover
+                            color: #53670E
+
+        .section_middle
+            padding-top: 12px
+            > *
+                color: $black
+            .article_content
+                ._title
+                    font-size: 18px
+                    line-height: 23px
+                    +m-b
+                    margin-top: 50px
+                ._text
+                    margin-top: 20px
+                    font-size: 15px
+                    line-height: 28px
+                    white-space: pre-line
+
+
+        .section_bottom
+            margin-top: 86px
+            > *
+                color: $black
+            ._title
+                +m-b
+                font-size: 22px
+                line-height: 28px
+            ul
+                margin-top: 34px
+                display: grid
+                gap: 20px
+                li
+                    .order
+                        margin-right: 5px
+                    ._detail
+                    
+                        display: inline
+                        &:hover
+                            text-decoration: underline $brown_1
+                            color: $brown_1
+                    .order, ._detail
+                        font-size: 15px
+                        line-height: 18px
+                        transition: .2s
+
+
+
+    .latest_articles
+        padding-bottom: 0
+        margin-bottom: 304px
+        margin-top: 110px
