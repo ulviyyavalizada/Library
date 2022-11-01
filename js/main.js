@@ -103,7 +103,7 @@ $(document).on('click', '.search_area .delete_btn', function(){
     $(this).parents('.search_area').find('input').val('')
     $(this).removeClass('active');
     articlesRightPart.removeClass('active_search');
-    searchableArticles.hide()
+    searchableArticles.css('display', 'none');
 })
 
 // Get article number link for Articles page
@@ -111,14 +111,16 @@ $('main.articles aside .submenu_inner ._text').on('click', function(e){
     e.preventDefault()
     articlesRightPart.addClass('white_overlay');
     articlesRightPart.removeClass('active_search');
+    $('main.articles aside .submenu_inner ._text').removeClass('active')
+    $(this).addClass('active')
 
     $(this).parents('aside').removeClass('active');
     $(this).parents('.articles').find('.search_area input').val('')
-    searchableArticles.hide()
+    searchableArticles.css('display', 'none');
 
     setTimeout(function(){
-        articlesRightPart.find('section').hide();
-        articlesRightPart.find('section.linked_articles').show();
+        articlesRightPart.find('section').css('display', 'none');;
+        articlesRightPart.find('section.linked_articles').css('display', 'block');;
         articlesRightPart.removeClass('white_overlay')
     }, 800)
 })
@@ -130,6 +132,8 @@ if($(window).width() > 992){
         $(this).parents('aside').find('ul.main_category').toggleClass('show')
     })
 }
+
+
 
 //**** Search engine START for Articles Page 
 (function(target, name) {
@@ -198,49 +202,88 @@ $(function() {
     }, 300)
     
     
-    $(".search_area input").on("keyup search", function(e) {
-        searchableArticles.show();
-        linkedArticles.hide();
+    $(".search_area input").on("input", function(e) {
+        // $('.searchable_articles .not_finded_text').css('display', 'none');
+        $('.searchable_articles .searchable_items').css('display', 'none');
+
+        searchableArticles.css('display', 'block');
+        linkedArticles.css('display', 'none');;
         articlesRightPart.addClass('active_search');
-        $(this).parents('.search_area').find('.delete_btn').addClass('active');
 
-        var val = $(this).val();
-        if(val.trim() !== "") {
-            for(var i in searchables) {
-            searchables[i].parse(val);
+        if($(this).val().length>2){
+            
+
+            searchableItems.css('display', 'block');
+            $(this).parents('.search_area').find('.delete_btn').addClass('active');
+            $('.searchable_articles .min_letter').css('display', 'none');
+
+            var val = $(this).val();
+            if(val.trim() !== "") {
+                for(var i in searchables) {
+                searchables[i].parse(val);
+                }
+            } else {
+                for(var i in searchables) {
+                searchables[i].restore();
+                }
             }
-        } else {
-            for(var i in searchables) {
-            searchables[i].restore();
-            }
-        }
-
-        var searchableContent = $('main.articles .searchable_articles .pagination_content');
-
-        searchableContent.each(function(){
-            if($(this).find('.search_highlight').length === 0){
-                $(this).hide()
+            
+            // console.log($('main.articles .searchable_articles .pagination_content .search_highlight'));
+            if($('.searchable_articles .search_highlight').length === 0){
+                $('.searchable_articles .not_finded_text').css('display', 'block');
+                $('.searcable_articles .searchable_items').css('display', 'none');
             }else{
-                $(this).show()
+                $('.searchable_articles .not_finded_text').css('display', 'none');
+                $('.searcable_articles .searchable_items').css('display', 'block');
             }
-        })
+            // else{
+            //     $('.right_part .searchable_articles .not_finded_text').css('display', 'none');
+            //     $('.right_part .searcable_articles .searchable_items').css('display', 'block');
+            // }
 
+           
+    
+            var searchableContent = $('main.articles .searchable_articles .pagination_content');
 
-        if($('.searchable_articles .search_highlight').length === 0){
-            $('.right_part .searchable_articles .not_finded_text').show();
-            $('.right_part .searcable_articles .searchable_items').hide();
-        }else{
-            $('.right_part .searchable_articles .not_finded_text').hide();
-            $('.right_part .searcable_articles .searchable_items').show();
+            searchableContent.each(function(){
+               
+                if($(this).find('.search_highlight').length === 0){
+                    $(this).css('display', 'none');
+                }else{
+                    $(this).css('display', 'block');
+                }
+            })
+    
+            
+        }else if(($(this).val().length === 2) || ($(this).val().length === 1)){
+            // console.log('min 3 letter');
+            $('.searchable_articles .min_letter').css('display', 'block');
+            $('.searchable_articles .not_finded_text').css('display', 'none');
+        }else if(($(this).val().length === 0)){
+            // articlesRightPart.find('section').css('display', 'none');
+            // articlesRightPart.find('section.latest_articles').css('display', 'block');
+            // articlesRightPart.find('section.most_articles').css('display', 'block');
+            $('main.articles aside .submenu_inner ._text').removeClass('active');
+            articlesRightPart.removeClass('active_search');
+            searchableArticles.css('display', 'none');
         }
 
+       
         
+       
     
 
     });
 })
 //**** Search engine END for Articles Page 
 
+// Back again articles
+$('main.articles .back_articles').on('click', function(){
+    articlesRightPart.find('section').css('display', 'none');;
+    articlesRightPart.find('section.latest_articles').css('display', 'block');;
+    articlesRightPart.find('section.most_articles').css('display', 'block');;
+    $('main.articles aside .submenu_inner ._text').removeClass('active')
+}) 
 
 // Get order number for Article Inner page
 let articleInnerOrderNumber = $('main.article_inner .article_section .section_bottom ul li .order');
@@ -257,7 +300,7 @@ var removeInputValue = $('main.manuscript .remove_val');
 
 function formInputValidation(){
     formInput.each(function(){
-        if( ($(this).val() === '' || $(this).val() === ' ' || fileInput.files.length === 0)){
+        if( ($(this).val() === '' || $(this).val() === ' ' || $('main.manuscript input[type="checkbox"]:checked').length === 0 || fileInput.files.length === 0)){
             formBtn.addClass('disabled')
             
         }else{
@@ -265,6 +308,16 @@ function formInputValidation(){
         }
     })
 }
+
+$('.input_checkbox input[type="checkbox"]').on('input', function(){
+    formInputValidation();
+    if($('main.manuscript input[type="checkbox"]:checked').length===0){
+        $(this).addClass('error')
+    }else{
+        $(this).removeClass('error')
+    }
+})
+
 
 $(function() {
     // Form Input event

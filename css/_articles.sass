@@ -1,17 +1,27 @@
 main
     &.articles
         padding-bottom: 175px
+        .linked_articles
+            .back_articles
+                margin-bottom: 9px
+                margin-top: -26px
+                color: $brown_1
+                display: flex
+                align-items: center
+                gap: 5px
+                font-size: 14px
+                line-height: 16.5px
         .linked_articles, .searchable_articles
             display: none
             padding-bottom: 10px
-            .not_finded_text
+            .not_finded_text, .min_letter
                 margin-top: 20px
                 color: $black
                 display: none
             .search_top_box
                 display: none
             .middle_box
-                
+                margin-top: 34px
             .article_item
                 cursor: pointer
                 margin: -9px
@@ -191,6 +201,10 @@ main
                                 line-height: 16px
                                 transition: all .2s
                                 text-decoration: underline transparent
+                                &.active
+                                    color: $brown_1
+                                    text-decoration-color: $brown_1
+                                    +r-m
                                 &:hover
                                     color: $brown_1
                                     text-decoration-color: $brown_1

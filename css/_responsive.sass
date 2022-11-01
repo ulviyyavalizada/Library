@@ -232,7 +232,10 @@
   
       &.articles 
         padding-bottom: 275px
-        
+        .linked_articles .back_articles
+          font-size: 16px
+          line-height: 19px
+          margin-top: -28px
         .linked_articles, .searchable_articles
           padding-bottom: 30px
           .pagination_content 
@@ -526,7 +529,17 @@
               margin-bottom: 30px
               .remove_val
                 right: 35px
-            
+            .input_checkbox 
+              gap: 12px
+              input.form-check-input
+                width: 20px
+                height: 20px
+              label
+                font-size: 17px
+                line-height: 20px
+                a
+                  &::after
+                    bottom: 1px
             .form-label, input, input::placeholder
               font-size: 17px
               line-height: 20px
@@ -901,6 +914,10 @@
 
     &.articles 
       padding-bottom: 96px
+      .linked_articles .back_articles
+        font-size: 12px
+        line-height: 14px
+          
       .linked_articles, .searchable_articles
         padding-bottom: 80px
         
@@ -1447,6 +1464,7 @@
     &.library 
       .main_body
         margin-top: 25px
+        flex-direction: column
         .left_part
           position: static
           margin-bottom: 20px
