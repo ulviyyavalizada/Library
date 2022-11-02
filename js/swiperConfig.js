@@ -41,7 +41,7 @@ var swiperSearchItems = new Swiper(".searched_items.swiper", {
 
 // Latest articles swiper in articles page
 var swiperArticles = new Swiper("main.articles .latest_articles .swiper", {
-  spaceBetween: 20,
+  spaceBetween: 2,
   grabCursor: true,
   speed: 800,
   navigation: {
@@ -66,9 +66,8 @@ var swiperArticles = new Swiper("main.articles .latest_articles .swiper", {
     576: {
       slidesPerView: 3,
     },
-    992: {
+    768: {
       slidesPerView: 3,
-      spaceBetween: 11,
     },
     1750: {
       slidesPerView: 3,

@@ -198,15 +198,7 @@ section.main_top
     background-color: #F8F8F8
 
 .pagination_area
-  margin-top: 34px
-  .pagination_content
-    margin-bottom: 21px
-    a
-        width: 100%
-    &.hide
-      display: none
-
-                
+  margin-top: 34px                
   ul.custom-pagination
     width: 100%
     justify-content: center
@@ -271,9 +263,13 @@ section.main_top
 .latest_articles
   padding-bottom: 80px
   .middle_box
+    margin: 0 -17px
+    padding: 0 9px
     padding-top: 25px
-    margin: 0 -9px
+    overflow: hidden
     position: relative
+    .swiper
+      overflow: unset
     .swiper-wrapper
         display: grid
         grid-template-columns: repeat(4, 1fr)
@@ -296,7 +292,7 @@ section.main_top
                       opacity: 1
                       background-color: rgba(0, 0, 0, 0.4)
             .box_item
-                padding: 9px
+                padding: 9px 9px 15px
                 pointer-events: none
                 border: 1px solid transparent
                 transition: all .3s

@@ -510,8 +510,8 @@ main.articles .linked_articles, main.articles .searchable_articles {
   padding-bottom: 10px;
 }
 
-main.articles .linked_articles .not_finded_text, main.articles .linked_articles .min_letter, main.articles .searchable_articles .not_finded_text, main.articles .searchable_articles .min_letter {
-  margin-top: 20px;
+main.articles .linked_articles .not_finded_text, main.articles .searchable_articles .not_finded_text {
+  margin-top: -16px;
   color: #2C1B1B;
   display: none;
 }
@@ -522,6 +522,11 @@ main.articles .linked_articles .search_top_box, main.articles .searchable_articl
 
 main.articles .linked_articles .middle_box, main.articles .searchable_articles .middle_box {
   margin-top: 34px;
+}
+
+main.articles .linked_articles .middle_box .pagination_content, main.articles .searchable_articles .middle_box .pagination_content {
+  margin-bottom: 21px;
+  width: 100%;
 }
 
 main.articles .linked_articles .article_item, main.articles .searchable_articles .article_item {
@@ -580,7 +585,7 @@ main.articles .linked_articles .article_item ._moreInfo, main.articles .searchab
 }
 
 main.articles .latest_articles {
-  padding-bottom: 95px;
+  padding-bottom: 35px;
 }
 
 main.articles .latest_articles .middle_box {
@@ -2523,6 +2528,9 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
 }
 
 @media (max-width: 1200px) {
+  header .main_container .logo_box {
+    width: 74px;
+  }
   header .main_container .header_navbar .nav_list {
     gap: 35px;
   }
@@ -2889,10 +2897,13 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
     line-height: 14px;
   }
   main.articles .latest_articles {
-    padding-bottom: 53px;
+    padding-bottom: 48px;
   }
   main.articles .latest_articles .middle_box {
     padding-top: 34px;
+  }
+  main.articles .latest_articles .middle_box .swiper-wrapper {
+    padding-bottom: 35px;
   }
   main.articles .latest_articles .middle_box .swiper-button-next, main.articles .latest_articles .middle_box .swiper-button-prev {
     display: none;
@@ -3942,18 +3953,6 @@ section.main_top .search_area input::placeholder {
   margin-top: 34px;
 }
 
-.pagination_area .pagination_content {
-  margin-bottom: 21px;
-}
-
-.pagination_area .pagination_content a {
-  width: 100%;
-}
-
-.pagination_area .pagination_content.hide {
-  display: none;
-}
-
 .pagination_area ul.custom-pagination {
   width: 100%;
   -webkit-box-pack: center;
@@ -4048,9 +4047,15 @@ section.main_top .search_area input::placeholder {
 }
 
 .latest_articles .middle_box {
+  margin: 0 -17px;
+  padding: 0 9px;
   padding-top: 25px;
-  margin: 0 -9px;
+  overflow: hidden;
   position: relative;
+}
+
+.latest_articles .middle_box .swiper {
+  overflow: unset;
 }
 
 .latest_articles .middle_box .swiper-wrapper {
@@ -4087,7 +4092,7 @@ section.main_top .search_area input::placeholder {
 }
 
 .latest_articles .middle_box .swiper-wrapper .swiper-slide .box_item {
-  padding: 9px;
+  padding: 9px 9px 15px;
   pointer-events: none;
   border: 1px solid transparent;
   -webkit-transition: all .3s;
