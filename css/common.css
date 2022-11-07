@@ -600,6 +600,14 @@ main.articles .latest_articles .middle_box .swiper-wrapper {
   padding-bottom: 45px;
 }
 
+main.articles .latest_articles .middle_box .swiper-button-next {
+  right: 17px;
+}
+
+main.articles .latest_articles .middle_box .swiper-button-prev {
+  left: 17px;
+}
+
 main.articles .latest_articles .middle_box .swiper-button-next, main.articles .latest_articles .middle_box .swiper-button-prev {
   opacity: 1;
   width: -webkit-max-content;
@@ -1779,6 +1787,10 @@ main.manuscript .manuscript_section .manuscript_form .file_area {
           justify-content: center;
 }
 
+main.manuscript .manuscript_section .manuscript_form .file_area.error {
+  border-image-source: url(../img/errorBorderWeb.png);
+}
+
 main.manuscript .manuscript_section .manuscript_form .file_area .file_label {
   width: 100%;
   display: none;
@@ -2479,6 +2491,9 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
   body main.manuscript .manuscript_section .manuscript_form .file_area {
     height: 161px;
     border-image-source: url(../img/border1750.png);
+  }
+  body main.manuscript .manuscript_section .manuscript_form .file_area.error {
+    border-image-source: url(../img/errorBorder1750.png);
   }
   body main.manuscript .manuscript_section .manuscript_form .file_area .file_label img {
     width: 36px;
@@ -3591,6 +3606,12 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
   main.manuscript .manuscript_section .manuscript_form input {
     padding: 16px 15px;
     padding-right: 50px;
+  }
+  main.manuscript .manuscript_section .manuscript_form .file_area {
+    border-image-source: url(../img/borderMob.png);
+  }
+  main.manuscript .manuscript_section .manuscript_form .file_area.error {
+    border-image-source: url(../img/errorBorderMobile.png);
   }
   main.manuscript .manuscript_section .manuscript_form .file_area .downloaded_file {
     padding: 16px 12px;

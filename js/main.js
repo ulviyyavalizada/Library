@@ -335,13 +335,16 @@ $(function() {
 formBtn.on('click', function(e){
     e.preventDefault()
     formInput.each(function(){
-        if($(this).val() == '' || $(this).val() == ' '){
+        if($(this).val() == '' || $(this).val() == ' ' || $('main.manuscript input[type="checkbox"]:checked').length===0 || $('main.manuscript .manuscript_form input[type="file"]').val().length === 0){
             formBtn.addClass('disabled');
-            $(this).addClass('error')
+            $(this).addClass('error');
+            $('main.manuscript input[type="checkbox"]').addClass('error');
+            $('main.manuscript .file_area').addClass('error')
         }else{
             formBtn.removeClass('disabled')
             $(this).removeClass('error');
-            
+            $('main.manuscript input[type="checkbox"]').removeClass('error');
+            $('main.manuscript .file_area').removeClass('error')
         }
     })
 })
