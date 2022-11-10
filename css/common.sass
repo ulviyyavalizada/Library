@@ -63,10 +63,56 @@ button
       width: 7px
       height: 12px
 
-
-
-
-
+.manuscriptModal
+  ._icon
+    width: 65px
+    object-fit: contain
+  .success_icon, .success_title
+    display: block
+  .error_icon, .error_title
+    display: none
+  &.errorModal
+    .success_icon, .success_title
+      display: none
+    .error_icon, .error_title
+      display: block
+  .modal-dialog
+    width: 100%
+    margin: auto
+    max-width: 367px
+    padding: 20px
+    height: max-content
+    .modal-content
+      padding: 24px
+      min-height: 224px
+      background: white
+      border: none
+      border-radius: 8px
+    
+      .modal_header
+        .close_modal
+          width: 100%
+          display: flex
+          justify-content: flex-end
+          img
+            width: 12px
+          button
+            display: flex
+                
+      .modal_body
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+        align-items: center  
+        .modal_title
+          margin-top: 30px
+          padding-bottom: 20px
+          color: $black
+          text-align: center
+          font-size: 15px
+          line-height: 18px    
+      
+      
 section 
   .top_box
     padding: 12px 0

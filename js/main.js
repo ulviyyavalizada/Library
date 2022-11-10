@@ -367,10 +367,12 @@ $('main.manuscript .manuscript_form input[type="file"]').on('change', function(e
     labelText.text(fileName);
     if( e.target.files.length !== 0 ){
         $(this).parents('.manuscript_form').find('.downloaded_file').addClass('show');
-        $(this).parents('.manuscript_form').find('.file_label').removeClass('show')
+        $(this).parents('.manuscript_form').find('.file_label').removeClass('show');
+        $(this).parents('.manuscript_form').find('.file_area').removeClass('error');
     }else{
         $(this).parents('.manuscript_form').find('.downloaded_file').removeClass('show');
-        $(this).parents('.manuscript_form').find('.file_label').addClass('show')
+        $(this).parents('.manuscript_form').find('.file_label').addClass('show');
+        $(this).parents('.manuscript_form').find('.file_area').addClass('error');
     }
 
     formInputValidation()

@@ -1873,6 +1873,7 @@ main.manuscript .manuscript_section .manuscript_form .file_area .downloaded_file
 
 main.manuscript .manuscript_section .manuscript_form .form_btn {
   margin-top: 50px;
+  pointer-events: unset;
 }
 
 main.manuscript .manuscript_section .manuscript_form .form_btn.disabled {
@@ -1921,6 +1922,26 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
   }
   html body .container {
     max-width: 1700px;
+  }
+  body .manuscriptModal ._icon {
+    width: 84px;
+  }
+  body .manuscriptModal .modal-dialog {
+    max-width: 506px;
+  }
+  body .manuscriptModal .modal-dialog .modal-content {
+    padding: 31px;
+    min-height: 276px;
+  }
+  body .manuscriptModal .modal-dialog .modal-content .modal_header .close_modal img {
+    width: 17px;
+  }
+  body .manuscriptModal .modal-dialog .modal-content .modal_body {
+    margin-top: 18px;
+  }
+  body .manuscriptModal .modal-dialog .modal-content .modal_body .modal_title {
+    font-size: 18px;
+    line-height: 22px;
   }
   body .main_btn {
     padding: 16px;
@@ -3255,6 +3276,23 @@ main.manuscript .manuscript_section .manuscript_form .form_btn.disabled:hover {
     font-size: 12px;
     line-height: 15px;
   }
+  main .manuscriptModal ._icon {
+    width: 63px;
+  }
+  main .manuscriptModal .modal-dialog {
+    max-width: 350px;
+    padding: 25px;
+  }
+  main .manuscriptModal .modal-dialog .modal-content {
+    padding: 21px;
+  }
+  main .manuscriptModal .modal-dialog .modal-content .modal_body {
+    margin-top: 23px;
+  }
+  main .manuscriptModal .modal-dialog .modal-content .modal_body .modal_title {
+    font-size: 14px;
+    line-height: 17px;
+  }
   main .main_btn {
     padding: 12px;
   }
@@ -3742,6 +3780,89 @@ button {
   background-repeat: no-repeat;
   width: 7px;
   height: 12px;
+}
+
+.manuscriptModal ._icon {
+  width: 65px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.manuscriptModal .success_icon, .manuscriptModal .success_title {
+  display: block;
+}
+
+.manuscriptModal .error_icon, .manuscriptModal .error_title {
+  display: none;
+}
+
+.manuscriptModal.errorModal .success_icon, .manuscriptModal.errorModal .success_title {
+  display: none;
+}
+
+.manuscriptModal.errorModal .error_icon, .manuscriptModal.errorModal .error_title {
+  display: block;
+}
+
+.manuscriptModal .modal-dialog {
+  width: 100%;
+  margin: auto;
+  max-width: 367px;
+  padding: 20px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.manuscriptModal .modal-dialog .modal-content {
+  padding: 24px;
+  min-height: 224px;
+  background: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.manuscriptModal .modal-dialog .modal-content .modal_header .close_modal {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.manuscriptModal .modal-dialog .modal-content .modal_header .close_modal img {
+  width: 12px;
+}
+
+.manuscriptModal .modal-dialog .modal-content .modal_header .close_modal button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.manuscriptModal .modal-dialog .modal-content .modal_body {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.manuscriptModal .modal-dialog .modal-content .modal_body .modal_title {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  color: #2C1B1B;
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
 }
 
 section .top_box {

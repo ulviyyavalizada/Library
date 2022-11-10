@@ -155,7 +155,7 @@
                     />
 
                     <button class="remove_val">
-                      <img src="img/cancel.svg" alt="">
+                      <img src="img/cancel.svg" alt="" />
                     </button>
                   </div>
 
@@ -173,7 +173,7 @@
                     />
 
                     <button class="remove_val">
-                      <img src="img/cancel.svg" alt="">
+                      <img src="img/cancel.svg" alt="" />
                     </button>
                   </div>
 
@@ -191,7 +191,7 @@
                     />
 
                     <button class="remove_val">
-                      <img src="img/cancel.svg" alt="">
+                      <img src="img/cancel.svg" alt="" />
                     </button>
                   </div>
 
@@ -209,7 +209,7 @@
                     />
 
                     <button class="remove_val">
-                      <img src="img/cancel.svg" alt="">
+                      <img src="img/cancel.svg" alt="" />
                     </button>
                   </div>
 
@@ -218,28 +218,40 @@
                     <!-- for error event add error class to  <div class="file_area"/>-->
                     <div class="file_area">
                       <label for="manuscriptFile" class="file_label show">
-                        <img src="img/file.svg" alt="">
+                        <img src="img/file.svg" alt="" />
                         <span class="_text">Fayl yüklə (pdf)</span>
                       </label>
                       <label class="downloaded_file">
                         <span class="file_name"></span>
-                        <button class="remove_file">
-                          Sil
-                        </button>
+                        <button class="remove_file">Sil</button>
                       </label>
-                      <input id="manuscriptFile" type="file" class="form-control d-none"  accept="application/pdf"/>
+                      <input
+                        id="manuscriptFile"
+                        type="file"
+                        class="form-control d-none"
+                        accept="application/pdf"
+                      />
                     </div>
-                    
-                    
-                    
                   </div>
 
                   <div class="input-group input_checkbox">
-                    <input class="form-check-input mt-0" type="checkbox" value="" id="rool_checkbox" aria-label="Checkbox for user rools">
-                    <label for="rool_checkbox"><a href="authorsRool.html">İstifadəci şərtləri</a> ilə razıyam</label>
+                    <input
+                      class="form-check-input mt-0"
+                      type="checkbox"
+                      value=""
+                      id="rool_checkbox"
+                      aria-label="Checkbox for user rools"
+                    />
+                    <label for="rool_checkbox"
+                      ><a href="authorsRool.html">İstifadəci şərtləri</a> ilə
+                      razıyam</label
+                    >
                   </div>
 
-                  <button class="form_btn disabled main_btn black_main_btn w-100">
+                  <button
+                    class="form_btn disabled main_btn black_main_btn w-100"
+                    type="button" data-bs-toggle="modal" data-bs-target="#manuscriptModal"
+                  >
                     Göndər
                   </button>
                 </form>
@@ -248,8 +260,49 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal (Add "errorModal" class to modal when error) -->
+      <div
+        class="modal fade manuscriptModal"
+        id="manuscriptModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby=""
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal_header">
+              <div class="close_btn">
+                <button
+                  type="button"
+                  class="close_modal"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <img src="img/closeModal.svg" alt="" />
+                </button>
+              </div>
+            </div>
+
+            <div class="modal_body">
+              <div class="_icon">
+                <img class="error_icon _icon" src="img/error.svg" alt="">
+                <img class="success_icon _icon" src="img/success.svg" alt="">
+              </div>
+
+              <h5 class="modal_title error_title">Xətta baş verdi</h5>
+              <h5 class="modal_title success_title">Əlyazmanız uğurla göndərildi</h5>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+     
     </main>
 
+     
     <footer>
       <div class="container">
         <div class="row">
@@ -321,8 +374,7 @@
 
   <!-- Swipers configuration file -->
   <script src="js/swiperConfig.js"></script>
- 
+
   <!-- Main JS file -->
   <script src="js/main.js"></script>
-
 </html>
