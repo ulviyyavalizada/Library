@@ -317,15 +317,31 @@ $(function() {
         $(this).each(function(){
             if($(this).val() == '' || $(this).val() == ' '){
                 $(this).addClass('error');
-                $(this).parents('.form_group').find('.remove_val').removeClass('active')
             }else{
                 $(this).removeClass('error')
-                $(this).parents('.form_group').find('.remove_val').addClass('active')
             }
         })
 
         
         formInputValidation()
+    
+    })
+
+    formInput.on('focusin', function(){
+        $(this).each(function(){
+            if($(this).val() == '' || $(this).val() == ' '){
+                $(this).parents('.form_group').find('.remove_val').removeClass('active')
+            }else{
+                $(this).parents('.form_group').find('.remove_val').addClass('active')
+            }
+        })
+    
+    })
+
+    formInput.on('focusout', function(){
+        $(this).each(function(){
+            $(this).parents('.form_group').find('.remove_val').removeClass('active')
+        })
     
     })
 })
